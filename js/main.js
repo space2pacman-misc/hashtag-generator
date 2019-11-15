@@ -61,7 +61,7 @@ var app = new Vue({
 			this.load(handler.bind(this));
 
 			function handler() {
-				this._ajax("PUT", this.db.url, JSON.stringify(this.hashtags.concat(this.uploadData)), cb);
+				this._ajax("PUT", this.db.url, JSON.stringify(this.uploadData.concat(this.hashtags)), cb);
 			}
 		},
 		clear() {
