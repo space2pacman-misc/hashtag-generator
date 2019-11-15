@@ -1,5 +1,6 @@
 Vue.component("hashtag-link", {
 	data() {
+		console.log(this.hashtag)
 		return {
 			link: this.item.link.replace("%hashtag%", this.hashtag)
 		}
@@ -45,6 +46,7 @@ var app = new Vue({
 			this.update(handler.bind(this));
 
 			function handler(data) {
+				console.log(data);
 				this.hashtags = JSON.parse(data);
 				this.uploadData = [];		
 			}
@@ -62,6 +64,7 @@ var app = new Vue({
 
 			function handler() {
 				this._ajax("PUT", this.db.url, JSON.stringify(this.uploadData.concat(this.hashtags)), cb);
+				this.hashtags = [];
 			}
 		},
 		clear() {
