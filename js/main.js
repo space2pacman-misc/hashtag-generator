@@ -1,6 +1,5 @@
 Vue.component("hashtag-link", {
 	data() {
-		console.log(this.hashtag)
 		return {
 			link: this.item.link.replace("%hashtag%", this.hashtag)
 		}
