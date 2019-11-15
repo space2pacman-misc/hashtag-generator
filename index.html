@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hash tag maker</title>
+	<link rel="stylesheet" href="css/uikit.min.css">
+</head>
+<body>
+
+<div id="app" class="uk-container uk-margin-large-top">
+	<div class="uk-flex">
+		<input type="text" class="uk-input" v-model="text" @keydown.enter="createHashtag" placeholder="Введите текст...">
+		<input type="submit" class="uk-button uk-button-primary" @click="createHashtag" value="Добавить">
+	</div>
+	<div class="js-hashtags uk-margin-top">
+		<hashtag-card v-for="hashtag in hashtags" :hashtag="hashtag"></hashtag-card>
+	</div>
+</div>
+
+<template id="template-hashtag-card">
+	<div class="uk-card uk-card-default uk-card-body uk-margin-bottom">
+		<div>
+		   	<hashtag-link v-for="link in this.$root.links" :item="link" :hashtag="hashtag.link"></hashtag-link>
+		</div>
+	   	<p>{{ hashtag.label }}</p>
+	</div>
+</template>
+
+<template id="template-hashtag-link">
+	<a :href="link" target="_blank" class="uk-margin-small-right">
+		<img :src="item.icon" width="30px">
+	</a>
+</template>
+
+<script src="js/vue.min.js"></script>
+<script src="js/uikit.min.js"></script>
+<script src="js/hashtag.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
