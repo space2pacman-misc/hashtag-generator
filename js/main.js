@@ -27,6 +27,10 @@ var app = new Vue({
 			{
 				link: "https://twitter.com/hashtag/%hashtag%?src=hash",
 				icon: "img/twitter.svg"
+			},
+			{
+				link: "https://www.tumblr.com/search/%hashtag%",
+				icon: "img/tumblr.png"
 			}
 		],
 		db: {
