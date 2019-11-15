@@ -45,7 +45,6 @@ var app = new Vue({
 			this.update(handler.bind(this));
 
 			function handler(data) {
-				console.log(data);
 				this.hashtags = JSON.parse(data);
 				this.uploadData = [];		
 			}
